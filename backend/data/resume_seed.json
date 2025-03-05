@@ -1,0 +1,40 @@
+{
+    "id": "resume_data",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "+1 234 567 890",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "experience": [
+      {
+        "title": "Cloud Engineer",
+        "company": "Tech Corp",
+        "dates": "2020-Present",
+        "details": [
+          "Designed and implemented AWS cloud infrastructure",
+          "Managed CI/CD pipelines using GitHub Actions",
+          "Optimized cloud costs by 40% through resource monitoring"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "title": "B.S. in Computer Science",
+        "company": "State University",
+        "dates": "2016-2020",
+        "details": [
+          "GPA: 3.8/4.0",
+          "Relevant coursework: Cloud Computing, Distributed Systems"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "category": "Cloud Technologies",
+        "items": ["AWS", "Terraform", "Serverless Architecture"]
+      },
+      {
+        "category": "Programming",
+        "items": ["Python", "JavaScript", "Bash"]
+      }
+    ]
+  }

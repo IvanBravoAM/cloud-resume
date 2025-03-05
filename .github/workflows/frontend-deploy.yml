@@ -1,0 +1,41 @@
+name: Deploy Frontend
+on:
+  push:
+    branches: [main]
+    paths: 
+      - 'frontend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configure AWS
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::1234567890:role/GitHubActionsRole
+        aws-region: us-east-1
+
+    - name: Install Tailwind
+      run: |
+        cd frontend
+        npm install
+        npx tailwindcss -i ./input.css -o ./styles.css --minify
+
+    - name: Sync to S3
+      run: |
+        aws s3 sync frontend/ s3://resume-bucket-ib \
+          --delete \
+          --acl public-read
+
+    - name: Invalidate Cache
+      run: |
+        aws cloudfront create-invalidation \
+          --distribution-id YOUR_DIST_ID \
+          --paths "/*"
