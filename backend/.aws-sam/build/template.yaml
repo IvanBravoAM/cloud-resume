@@ -1,76 +1,73 @@
-
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: Cloud Resume Challenge Backend
-
 Resources:
   ResumeTable:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: CloudResume
       AttributeDefinitions:
-        - AttributeName: id
-          AttributeType: S
+      - AttributeName: id
+        AttributeType: S
       KeySchema:
-        - AttributeName: id
-          KeyType: HASH
+      - AttributeName: id
+        KeyType: HASH
       BillingMode: PAY_PER_REQUEST
-
   ResumeApi:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Prod
       Cors:
-        AllowMethods: "'GET,POST'"
-        AllowHeaders: "'Content-Type,X-Amz-Date'"
-        AllowOrigin: "'*'"
-
+        AllowMethods: '''GET,POST'''
+        AllowHeaders: '''Content-Type,X-Amz-Date'''
+        AllowOrigin: '''*'''
   GetResumeFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: src/
+      CodeUri: GetResumeFunction
       Handler: lambda.lambda_handler
       Runtime: python3.13
       Policies:
-        - DynamoDBCrudPolicy:
-            TableName: !Ref ResumeTable
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: ResumeTable
       Events:
         ApiEvent:
           Type: Api
           Properties:
             Path: /resume
             Method: GET
-            RestApiId: !Ref ResumeApi
-
+            RestApiId:
+              Ref: ResumeApi
+    Metadata:
+      SamResourceId: GetResumeFunction
   VisitorCounterFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: src/
+      CodeUri: VisitorCounterFunction
       Handler: lambda.lambda_handler
       Runtime: python3.13
       Policies:
-        - DynamoDBCrudPolicy:
-            TableName: !Ref ResumeTable
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: ResumeTable
       Events:
         ApiEvent:
           Type: Api
           Properties:
             Path: /visitors
             Method: POST
-            RestApiId: !Ref ResumeApi
-
+            RestApiId:
+              Ref: ResumeApi
+    Metadata:
+      SamResourceId: VisitorCounterFunction
 Outputs:
   ApiUrl:
-    Description: "API Gateway endpoint URL"
-    Value: !Sub "https://${ResumeApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
-
+    Description: API Gateway endpoint URL
+    Value:
+      Fn::Sub: https://${ResumeApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/
 Cors:
-  AllowMethods: "'GET,POST,OPTIONS'"
-  AllowHeaders: "'Content-Type,X-Amz-Date'"
-  AllowOrigin: "'https://resume.yourdomain.com'"
-  AllowCredentials: "'true'"
-
-Environment:
-  Variables:
-    DYNAMODB_TABLE: !Ref CloudResume
-    AWS_REGION: !Ref AWS::Region
+  AllowMethods: '''GET,POST,OPTIONS'''
+  AllowHeaders: '''Content-Type,X-Amz-Date'''
+  AllowOrigin: '''https://resume.yourdomain.com'''
+  AllowCredentials: '''true'''

@@ -1,0 +1,46 @@
+/* Custom background color classes */
+.bg-custom-light {
+    background-color: #f0f4f8; /* Light custom color */
+}
+
+.bg-custom-dark {
+    background: linear-gradient(to right top, #03092a, #102248, #1f3869, #2e518c, #3b6bb0, #3a6bae, #3a6cac, #3a6caa, #2e5282, #21395c, #142239, #030a19);}
+.bg-m-blue{
+    background: #1b2a41;
+}
+
+
+.bg-custom-white {
+    background: linear-gradient(to left top, #fefeff, #e5e7f9, #cad1f4, #acbdee, #89a9e9, #7294d3, #5a80be, #426da9, #395481, #2e3d5b, #212737, #121317);
+}
+
+.bg-m-black{
+    background: #0e141d ;
+}
+
+.bg-m-im{
+    background-image: url("assets/images/circulos.jpg");
+}
+
+.bg-m-grey{
+    background: #101927;
+
+    opacity: 1;
+}
+/* Custom text color classes */
+.text-custom-light {
+    color: #2d3748; /* Light custom text color */
+}
+
+.text-custom-dark {
+    color: #e2e8f0; /* Dark custom text color */
+}
+
+.text-s-deployed{
+    color: #00ff00;
+}
+
+.bg-s-deployed{
+    background: #048b04;
+}
+

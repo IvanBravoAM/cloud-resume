@@ -19,7 +19,7 @@ jobs:
     - name: Configure AWS
       uses: aws-actions/configure-aws-credentials@v2
       with:
-        role-to-assume: arn:aws:iam::1234567890:role/GitHubActionsRole
+        role-to-assume: arn:aws:iam::${AWS_ACCOUNT_ID}:role/GitHubActionsRole
         aws-region: us-east-1
 
     - name: Install Tailwind
@@ -37,5 +37,5 @@ jobs:
     - name: Invalidate Cache
       run: |
         aws cloudfront create-invalidation \
-          --distribution-id YOUR_DIST_ID \
+          --distribution-id ${CLOUDFRONT_ID} \
           --paths "/*"

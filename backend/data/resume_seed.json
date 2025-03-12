@@ -1,40 +1,180 @@
 {
-    "id": "resume_data",
-    "name": "John Doe",
-    "email": "john@example.com",
-    "phone": "+1 234 567 890",
-    "linkedin": "https://linkedin.com/in/johndoe",
-    "experience": [
-      {
-        "title": "Cloud Engineer",
-        "company": "Tech Corp",
-        "dates": "2020-Present",
-        "details": [
-          "Designed and implemented AWS cloud infrastructure",
-          "Managed CI/CD pipelines using GitHub Actions",
-          "Optimized cloud costs by 40% through resource monitoring"
-        ]
-      }
-    ],
-    "education": [
-      {
-        "title": "B.S. in Computer Science",
-        "company": "State University",
-        "dates": "2016-2020",
-        "details": [
-          "GPA: 3.8/4.0",
-          "Relevant coursework: Cloud Computing, Distributed Systems"
-        ]
-      }
-    ],
-    "skills": [
-      {
-        "category": "Cloud Technologies",
-        "items": ["AWS", "Terraform", "Serverless Architecture"]
+  "id": {"S": "resume_data"},
+  "resume_data": {
+    "M": {
+      "personal_info": {
+        "M": {
+          "name": {"S": "Ivan Bravo"},
+          "email": {"S": "ivanbravo.2201@gmail.com"},
+          "phone": {"S": "+54 223-6037-495"},
+          "location": {"S": "Buenos Aires, Argentina"},
+          "linkedin": {"S": "https://www.linkedin.com/in/ivanbravo22"},
+          "github": {"S": "github.com/IvanBravoAM"}
+        }
       },
-      {
-        "category": "Programming",
-        "items": ["Python", "JavaScript", "Bash"]
+      "professional_summary": {"S": "Backend & Blockchain Developer with 3+ years of experience in designing, developing, and optimizing backend systems. Technical referent at Accenture, leading teams and delivering scalable solutions in Salesforce and blockchain. Skilled in API development, smart contracts and data engineering. Passionate about building high-performance, secure applications that drive business innovation."},
+      "professional_experience": {
+        "L": [
+          {
+            "M": {
+              "title": {"S": "Salesforce Developer"},
+              "company": {"S": "Accenture"},
+              "dates": {"S": "Aug 2021 - Present"},
+              "description": {"S": "As a Technical Lead for a large-scale, enterprise Salesforce project—the company’s centralized platform for financial management, I served as a  referent on core business area, collaborating with hundreds of global stakeholders to deliver solutions while reducing technical debt and spearheading high-impact features."},
+              "details": {
+                "L": [
+                  {"S": "Developed 50+ features, handling estimation, coding, testing, and deployment."},
+                  {"S": "Led technical mentorship for a 40-member development team in a large scale project."},
+                  {"S": "Refactored legacy code, reducing technical debt and enhancing system performance."},
+                  {"S": "Created detailed technical documentation to support effective knowledge transfer."},
+                  {"S": "Trained and mentored junior developers, guiding them through company programs."},
+                  {"S": "Implemented custom integrations between Salesforce and external applications."},
+                  {"S": "Managed high-severity performance, usability, and security issues to ensure system stability."},
+                  {"S": "Acted as a backup Scrum Master, facilitating sprint planning and team coordination."}
+                ]
+              }
+            }
+          },
+          {
+            "M": {
+              "title": {"S": "Blockchain/Backend Development Intern"},
+              "company": {"S": "Coini Technologies"},
+              "dates": {"S": "Oct 2023 - Jan 2024"},
+              "description": {"S": "I contributed to foundational blockchain infrastructure by developing EVM-compatible smart contracts and backend integrations for wallet tokenization, enabling seamless blockchain-based payment solutions for the platform."},
+              "details": {
+                "L": [
+                  {"S": "Developed a backend integration with an EVM blockchain for wallet creation and tokenization."},
+                  {"S": "Contributed to a proof-of-concept project, setting the foundation for blockchain-based payments."},
+                  {"S": "Designed and implemented smart contracts for a decentralized application (dApp) on Ethereum."}
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "education": {
+        "L": [
+          {
+            "M": {
+              "degree": {"S": "Programming Technician"},
+              "institution": {"S": "Universidad Tecnológica Nacional FRMDP"},
+              "dates": {"S": "Feb 2020 – Nov 2022"}
+            }
+          },
+          {
+            "M": {
+              "degree": {"S": "Backend Development Program"},
+              "institution": {"S": "CoderHouse"},
+              "dates": {"S": "Jun 2023 – Dec 2023"}
+            }
+          },
+          {
+            "M": {
+              "degree": {"S": "Blockchain Development Bootcamp"},
+              "institution": {"S": "Blockchain Bites"},
+              "dates": {"S": "Sep 2023 – Jan 2024"}
+            }
+          },
+          {
+            "M": {
+              "degree": {"S": "Data Engineering"},
+              "institution": {"S": "CoderHouse"},
+              "dates": {"S": "Dec 2023 – Apr 2024"}
+            }
+          }
+        ]
+      },
+      "languages": {
+        "L": [
+          {
+            "M": {
+              "language": {"S": "English"},
+              "level": {"S": "C1 (Cambridge First Certificate)"}
+            }
+          },
+          {
+            "M": {
+              "language": {"S": "German"},
+              "level": {"S": "A1"}
+            }
+          }
+        ]
+      },
+      "skills": {
+        "M": {
+          "programming": {"L": [{"S": "C"}, {"S": "Java"}, {"S": "Python"}, {"S": "JavaScript"}, {"S": "TypeScript"}, {"S": "Solidity"}, {"S": "Apex"}, {"S": "Go"}]},
+          "frameworks": {"L": [{"S": "Node.js"}, {"S": "Express.js"}, {"S": "NestJS"}, {"S": "Angular"}, {"S": "Mongoose"}]},
+          "tools": {"L": [{"S": "Git"}, {"S": "Docker"}, {"S": "JIRA"}, {"S": "Terraform"}]},
+          "databases": {"L": [{"S": "MySQL"}, {"S": "MongoDB"}, {"S": "PostgreSQL"}, {"S": "DynamoDB"}]},
+          "cloud": {"L": [{"S": "S3"}, {"S": "EC2"}, {"S": "Lambda"}, {"S": "API Gateway"}, {"S": "Cloudfront"}]},
+          "blockchain": {"L": [{"S": "Smart Contracts (EVM)"}, {"S": "dApps"}, {"S": "ERC Standards"}, {"S": "DeFi Protocols"}, {"S": "Web3.js"}, {"S": "Truffle"},   {"S": "Hardhat"}, {"S": "OpenZeppelin"}]},
+          "data_engineering": {"L": [{"S": "ETL Pipelines"}, {"S": "Data Warehousing"}, {"S": "Data Modeling"}, {"S": "Redshift"}, {"S": "Apache Airflow"}]},
+          "software_development": {"L": [{"S": "API Development"}, {"S": "CI/CD Pipelines"}, {"S": "Unit,Smoke,Integration Testing"}, {"S": "Code Review"}, {"S": "Microservices Monolithic Architecture"}]}
+        }
+      },
+      "projects": {
+        "L": [
+          {
+            "M": {
+              "tittle": {"S": "Warehouse Polirepo Solution"},
+              "status": {"S": "Deployed"},
+              "description": {"S": "Developed a poli-repo solution for businesses needing scalable, real-time inventory tracking and event-driven workflows. Designed and implemented CRUD, authentication, batch processing. Integrated Event-driven architecture with Kafka"},
+              "stack": {"L": [{"S": "Java"}, {"S": "Spring Boot"}, {"S": "PostgreSQL"}, {"S": "Kafka"}, {"S": "Docker"}, {"S": "Go"}, {"S": "Spring Batch"}, {"S": "Spring Security"}, {"S": "Apache Airflow"}]},
+              "github": {"S": "https://github.com/IvanBravoAM/warehouse-service"},
+              "demo": {"S": "https://ivan-bravo.com"}
+            }
+          },
+          {
+            "M": {
+              "tittle": {"S": "Ethereum Cross-chain dApp"},
+              "status": {"S": "In Maintenance"},
+              "description": {"S": "Implemented smart contracts for the minting and trading of NFTs on Ethereum and Polygon blockchain. Developed cross-chain NFT minting. Researched and implemented DeFi protocols to enable token swaps and liquidity pools. Developed a backend API to interact with the blockchain and manage user data."},
+              "stack": {"L": [{"S": "Solidity"}, {"S": "ERC Standards"}, {"S": "NFT"}, {"S": "DeFi Protocols"}, {"S": "Web3.js"}, {"S": "Hardhat"}, {"S": "OpenZeppelin Defender"}, {"S": "IPFS"}]},
+              "github": {"S": "github.com/IvanBravoAM/batch-02-desafio-integrador"},
+              "demo": {"S": "https://ivan-bravo.com"}
+            }
+          },
+          {
+            "M": {
+              "tittle": {"S": "Cloud Resume Challenge"},
+              "status": {"S": "Deployed"},
+              "description": {"S": "Serverless resume website deployed on AWS that showcases my professional experience, skills, and projects. Built a RESTful API using AWS Lambda and API Gateway to fetch resume data from a DynamoDB table. Designed a responsive frontend using HTML, CSS, and JavaScript. Implemented CI/CD pipelines with GitHub Actions to automate deployments."},
+              "stack": {"L": [{"S": "S3"}, {"S": "Cloudfront"}, {"S": "Lambda"}, {"S": "API Gateway"}, {"S": "DynamoDB"}]},
+              "github": {"S": "github.com/IvanBravoAM/cloud-resume"},
+              "demo": {"S": "https://ivan-bravo.com"}
+            }
+          },
+          {
+            "M": {
+              "tittle": {"S": "E-Commerce Backend API"},
+              "status": {"S": "Deployed"},
+              "description": {"S": "Developed a robust E-Commerce platform using Node.js, MongoDB, and Express. It integrates JavaScript backend framework to build the application, covering user management and an efficient purchasing process. Node.js handles server-side logic, MongoDB ensures reliable data storage, and Express streamlines API development."},
+              "stack": {"L": [{"S": "JavaScript"}, {"S": "Node.js"}, {"S": "MongoDB"}, {"S": "Express.js"}, {"S": "Mongoose"}, {"S": "JWT"}]},
+              "github": {"S": "github.com/IvanBravoAM/inventory-app"},
+              "demo": {"S": "https://ivan-bravo.com"}
+            }
+          },
+          {"M":{
+              "tittle": {"S": "Notion Tools"},
+              "status": {"S": "In Development"},
+              "description": {"S": "Automates the organization of Twitter bookmarks. Implements scraping saved posts using Selenium, FastAPI microservice to expose classification with NLP models (categories/tags) and Notion sync as API endpoints. Use of DynamoDB to store structured data in Notion (title, author, date, links, media) and allow advanced querying. Applies continuous learning from manual corrections in Notion"},
+              "stack": {"L": [{"S": "Python"}, {"S": "Selenium"}, {"S": "Pytorch"}, {"S": "Lambda"}, {"S": "FastAPI"}, {"S": "DynamoDB"}, {"S": "Notion API"}]},
+              "github": {"S": "github.com/IvanBravoAM/salesforce-integration"},
+              "demo": {"S": "https://ivan-bravo.com"}
+            }
+          },
+          {
+            "M": {
+              "tittle": {"S": "Data Engineering Pipeline"},
+              "status": {"S": "In Development"},
+              "description": {"S": "Developed an ETL pipeline to extract, transform, and load data from multiple sources into a data warehouse. Designed and implemented data models to support analytics and reporting requirements. Utilized Apache Airflow to automate data processing workflows. Conducted performance tuning and optimization to enhance pipeline efficiency."},
+              "stack": {"L": [{"S": "ETL Pipelines"}, {"S": "Data Warehousing"}, {"S": "Data Modeling"}, {"S": "Apache Airflow"}]},
+              "github": {"S": "github.com/IvanBravoAM/data-engineering-pipeline"},
+              "demo": {"S": "https://ivan-bravo.com"}
+            }
+          }
+        ]
       }
-    ]
+    }
   }
+}
